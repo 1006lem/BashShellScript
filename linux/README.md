@@ -14,4 +14,4 @@ TBF
 
 ## 5. [VI 편집기](vim/README.md)
 
-### 7. [환경 설정 (실습)](vim/case_study.md)
+## 6.[환경 설정 (실습)](case_study/README.md)
