@@ -18,13 +18,13 @@
 - Bash, Tcsh, Ksh, Zsh, Fish 등이 있다
 - centOS에서 기본적으로 사용하는 쉘: `Bash` 쉘(Bourne Again Shell)
 
-### 3. 주요 명령어
+## 2. 리눅스 주요 명령어
 
-### 4. 파일 구조
+## 3. 파일 구조
 
-### 5. Bash 스크립트
+## 4. Bash 스크립트
 
-### 6. VI 편집기
+## 5. VI 편집기
 
 ### 7. 환경 설정 (실습)
 - case_study문서에서 진행
