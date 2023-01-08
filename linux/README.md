@@ -3,7 +3,7 @@
 
 TBF
 ---
-## 1. [리눅스 기초 지식](commands/README.md)
+## 1. [리눅스 기초 지식](whatIsLinux/README.md)
 
 
 ## 2. [리눅스 주요 명령어](commands/README.md)
