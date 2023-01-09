@@ -25,32 +25,32 @@
 - 모든 디렉토리의 최상위 디렉토리를 **루트 노드**라고 하며, `/` 라고 표시한다.
 
 ### 1. 주요 디렉토리
-[![리눅스 파일 구조 확인](http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png)](https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/)
+[![리눅스파일구조확인](http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png)](https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/)
 <!--
 <img width="80%" src="http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png">
 -->
 
 | 위치 | 이름 | 설명 |
 | :---: | :---: | --- | 
-| / | root | - 최상위 디렉토리 <br> - 절대 경로의 기준이 되는 디렉토리
-| /root | | - 관리자 계정 root사용자의 홈 디렉토리
-| /home |  | - 사용자의 홈 디렉토리 <br> - 사용자를 추가하면 사용자 id와 같은 디렉토리가 이곳에 생성
-| /usr | user | - 일반 사용자들이 사용하는 디렉토리
-| /lib | library | - 커널이 필요로 하는 라이브러리 파일,<br> 커널이 필요로 하는 모듈 파일이 있는 디렉토리
-| /bin | binary | - 필수적인 command 파일을 저장하는 디렉토리 <br>- mv, cp, rm, cat, chmod, chown, ps과 같은 명령어가 이 디렉토리에 존재
-| /sbin | system binary | - 시스템 바이너리 파일을 저장하는 디렉토리 <r>- 시스템 명령어(ifconfig, ethtool, e2fsck, halt, reboot, fdisk...)를 저장하고 있는 디렉토리 
-| /boot |  | - 리눅스 부팅 관련 정보(커널 이미지, ...) 가 있는 디렉토리로, <br> 시스템 부딩 시 부트 로더가 찾는 곳
-| /dev | device | - 시스템 디바이스 파일을 저장하는 디렉토리<br> - 물리적 장치가 파일화되어 저장
-| /etc |  | - 시스템 환경 설정 파일이 있는 곳
-| /tmp | temp | - 임시 파일 저장
-| /opt | optional | - 추가 응용프로그램 패키지 설치 장소 <br> - 패키지 매니저가 자체적으로 설치/삭제 수행
-| /var | variable data | - 가변 자료 저장 디렉토리 <br> - 시스템 로그 파일, 사용자 로그인 보안 기록, 데이터베이스 캐싱 파일,<br> 웹서버 이미지 파일 등이 위치하는 디렉토리 <br> -시스템 운영 중 시변경된 스템 자료 데이터를 저장하는 정소
-| /sys | system | - 가상 파일 시스템 디렉토리
-| /run |  | - run-time variable data 관리하는 디렉토리<br> - 부팅 후의 시스템 정보를 관리한다다
-| /lost |  | - 휴지통
-| /proc | process | - 프로세스 정보 등 커널 관련 정보 저장<br> 커널, 메모리 등 시스템 정보가 존재하는 가상 파일 시스템
-| /media |  | - 외부 장치의 마운트 포인트로 사용되는 디렉토리(OS가 관리)
-| /mmt | mount | - 사용자가 직접 마운팅하는 경로로 사용되는 디렉토리
+| `/` | root | - 최상위 디렉토리 <br> - 절대 경로의 기준이 되는 디렉토리
+| `/root` | | - 관리자 계정 root사용자의 홈 디렉토리
+| `/home` |  | - 사용자의 홈 디렉토리 <br> - 사용자를 추가하면 사용자 id와 같은 디렉토리가 이곳에 생성
+| `/usr` | user | - 일반 사용자들이 사용하는 디렉토리
+| `/lib` | library | - 커널이 필요로 하는 라이브러리 파일,<br> 커널이 필요로 하는 모듈 파일이 있는 디렉토리
+| `/bin` | binary | - 필수적인 command 파일을 저장하는 디렉토리 <br>- mv, cp, rm, cat, chmod, chown, ps과 같은 명령어가 이 디렉토리에 존재
+| `/sbin` | system binary | - 시스템 바이너리 파일을 저장하는 디렉토리 <br>- 시스템 명령어(ifconfig, ethtool, e2fsck, halt, reboot, fdisk...)를 저장하고 있는 디렉토리 
+| `/boot` |  | - 리눅스 부팅 관련 정보(커널 이미지, ...) 가 있는 디렉토리로, <br> 시스템 부딩 시 부트 로더가 찾는 곳
+| `/dev` | device | - 시스템 디바이스 파일을 저장하는 디렉토리<br> - 물리적 장치가 파일화되어 저장
+| `/etc` |  | - 시스템 환경 설정 파일이 있는 곳
+| `/tmp` | temp | - 임시 파일 저장
+| `/opt` | optional | - 추가 응용프로그램 패키지 설치 장소 <br> - 패키지 매니저가 자체적으로 설치/삭제 수행
+| `/var` | variable data | - 가변 자료 저장 디렉토리 <br> - 시스템 로그 파일, 사용자 로그인 보안 기록, 데이터베이스 캐싱 파일,<br> 웹서버 이미지 파일 등이 위치하는 디렉토리 <br> -시스템 운영 중 시변경된 스템 자료 데이터를 저장하는 정소
+| `/sys` | system | - 가상 파일 시스템 디렉토리
+| `/run` |  | - run-time variable data 관리하는 디렉토리<br> - 부팅 후의 시스템 정보를 관리한다다
+| `/lost` |  | - 휴지통
+| `/proc` | process | - 프로세스 정보 등 커널 관련 정보 저장<br> 커널, 메모리 등 시스템 정보가 존재하는 가상 파일 시스템
+| `/media` |  | - 외부 장치의 마운트 포인트로 사용되는 디렉토리(OS가 관리)
+| `/mmt` | mount | - 사용자가 직접 마운팅하는 경로로 사용되는 디렉토리
 
 > `/` VS `/root`
 > - `/` 와 `/root` 디렉토리는 이름은 같지만 다른 디렉토리이다
