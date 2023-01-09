@@ -51,27 +51,34 @@
 | `/proc` | process | - 프로세스 정보 등 커널 관련 정보 저장<br> 커널, 메모리 등 시스템 정보가 존재하는 가상 파일 시스템
 | `/media` |  | - 외부 장치의 마운트 포인트로 사용되는 디렉토리(OS가 관리)
 | `/mmt` | mount | - 사용자가 직접 마운팅하는 경로로 사용되는 디렉토리
+<br>
 
-> `/` VS `/root`
+
+> __Note__ 
+> #### **`/` VS `/root`**
 > - `/` 와 `/root` 디렉토리는 이름은 같지만 다른 디렉토리이다
 
-> __Note__ <br>
->  **`bin` VS `sbin`**
+> __Note__ 
+> #### **`bin` vs `sbin`**
 > - `bin`은 일반 및 root사용자들이 사용하고, `sbin`은 root 사용자에게 이용하도록 권장 
-  
-  
-> `/etc` 
+<br>
+
+> __Note__ <br>
+> #### **`/etc`**
 > - `/etc/passwd` : 사용자 정보(username, 암호화된 패스워드 등)가 들어있다. 
 > - `/etc/shadow`: 새로운 섀도우 패스워드(`/etc/passwd`의 암호화된 패스워드) 저장
 > - `/etc/httpd` : 아파치 웹 서버의 설정, 로그 파일이 들어있다
 > - `/etc/security`: 터미널 보안에 관련된 설정이 있다
 > - `/etc/ssh`: secure shell 설정 파일이 있다
 > - `/etc/sysconfig`: 시스템과 네트워크 설정 관련 파일이 있다
+<br>
 
-> `var` variable
+> __Note__ <br>
+> #### **`var`** variable
 > - 가변 자료 저장 디렉토리 
 > - 시스템 로그 파일, 사용자 로그인 보안 기록, 데이터베이스 캐싱 파일,<br> 웹서버 이미지 파일 등이 위치하는 디렉토리
 > - 시스템 운영 중 시변경된 스템 자료 데이터를 저장하는 정소
+> 
 > - /var/cache: 어플리케이션의 캐시 데이터 저장
 > - /var/lib: 어플리케이션/시스템 관련 상태 정보 수집
 > - /var/local: /usr/local에 설치된 프로그램(시스템 관리자가 설치한 프로그램)들의 데이터 보관
@@ -88,7 +95,8 @@
 > - /var/log/messages: syslog의 로그 파일 저장(커널, 시스템 프로그램의 모든 메시지 기록)
 > - /var/named: 네임서버 설정 파일
   
-> `/proc` process
+> __Note__ <br>
+> #### **`/proc`** process
 > - 가상 파일 시스템(디스크에는 존재하지 않으므로 물리적 용량이 없다)
 > - 커널이 메모리에 적재된 후에 생성되는 디렉토리(부팅 시 초기화)
 > - 메모리에 존재하는 작업들이 파일 형태로 이곳에 저장된다
@@ -102,11 +110,12 @@
 > - `/proc/stat`: 시스템 상태 정보 확인
 > - `/proc/partition`: 파티션 분할 영역 정보 출력
 > - `/proc/version`: 커널 버전 확인 
-
+<!--
 > - 리눅스 커널에서 직접 파일 시스템을 관리하는데, 이를 proc 파일 시스템이라고 한다
-> - 이러한 proc 파일 시스템에 대한 정보는 /usr/src/linux/Documentation/proc.txt에서 확인할 수 있다
+> - 이러한 proc 파일 시스템에 대한 정보는 /usr/src/linux/Documentation/proc.txt에서 확인할 수 있다-->
 
-> `/lib` library
+> __Note__ <br>
+> #### **`/lib`** library
 > - 프로그램이 의존하는 라이브러리 파일 존재
 > - /lib/modules: 커널 모듈 파일 존재
 
@@ -125,7 +134,7 @@
 
 ---
 <b id="f1">스폴(spool)</b><br>
-  스폴(SPOOL, Simultaneous Peripheral Operation On-Line)은 대기열 관리 기법으로,<br>
+  스폴(SPOOL, Simultaneous Peripheral Operation On-Line)은 <br>대기열 관리 기법으로,
   CPU와 주변장치의 처리 속도 차이에 따른 대기 시간을 줄이는 방식이다. <br>
   CPU의 처리 속도에 비해 입출력 장치의 처리 속도가 훨씬 느리다.<br>
   이때 컴퓨터와 입출력장치를 직접 연결하지 않고, 물리적인 중간 저장장치를 버퍼처럼 중간에 둔다.<br>
