@@ -10,36 +10,45 @@
 | ps | 프로세스 정보 표시 |
 | kill | 프로세스 중지 |
 
-- uname
+#### - uname
 <!-- uname소개<br>-->
 ```console
 foo@bar:~$ uname
 foo
 ```
-- crontab
+#### - crontab
 ```console
 foo@bar:~$ uname
 foo
 ```
-- free
+#### - free
+- 서버의 메모리 성능 출력
+- total: 전체 메모리 용량
+- used: 사용중인 메모리 용량
+- free: 사용 가능한 메모리 양
+- shared: 프로세스끼리 공유하는 메모리 양
+- buffer: 버퍼 용도로 사용하는 메모리 양
+- cache: 페이지 캐시, 슬랩(커널이 사용하는 메모리)으로 사용하는 메모리양
+- available: 실제 사용 가능한 메모리 예상 크기
+<!-- https://kim-dragon.tistory.com/44 -->
 ```console
 foo@bar:~$ uname
 foo
 ```
 
-- top
+#### - top
 ```console
 foo@bar:~$ uname
 foo
 ```
 
-- ps
+#### - ps
 ```console
 foo@bar:~$ uname
 foo
 ```
 
-- kill
+#### - kill
 ```console
 foo@bar:~$ uname
 foo
