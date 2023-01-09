@@ -14,6 +14,9 @@
 
 ### 8. 리눅스 구조
 
+### 9. 파일 시스템 http://doc.kldp.org/Translations/html/SysAdminGuide-KLDP/x1087.html
+
+
 ### 2. 쉘
 - 유닉스 계열의 시스템에서 사용하는 대화형 인터페이스이다
 - 명령어 해석기이다. 사용자가 입력한 명령을 해석해 커널로 전달하거나, <br>
