@@ -25,7 +25,7 @@
 - 모든 디렉토리의 최상위 디렉토리를 **루트 노드**라고 하며, `/` 라고 표시한다.
 
 ### 1. 주요 디렉토리
-[!("http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png")](https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/)
+[![리눅스 파일 구조 확인](http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png)](https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/)
 <!--
 <img width="80%" src="http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png">
 -->
