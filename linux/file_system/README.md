@@ -39,7 +39,7 @@
 | `/lib` | library | - 커널이 필요로 하는 라이브러리 파일,<br> 커널이 필요로 하는 모듈 파일이 있는 디렉토리
 | `/bin` | binary | - 필수적인 command 파일을 저장하는 디렉토리 <br>- mv, cp, rm, cat, chmod, chown, ps과 같은 명령어가 이 디렉토리에 존재
 | `/sbin` | system binary | - 시스템 바이너리 파일을 저장하는 디렉토리 <br>- 시스템 명령어(ifconfig, ethtool, e2fsck, halt, reboot, fdisk...)를 저장하고 있는 디렉토리 
-| `/boot` |  | - 리눅스 부팅 관련 정보(커널 이미지, ...) 가 있는 디렉토리로, <br> 시스템 부딩 시 부트 로더가 찾는 곳
+| `/boot` |  | - 리눅스 부팅 관련 정보(커널 이미지)가 있는 디렉토리로, <br> 시스템 부딩 시 부트 로더가 찾는 곳
 | `/dev` | device | - 시스템 디바이스 파일을 저장하는 디렉토리<br> - 물리적 장치가 파일화되어 저장
 | `/etc` |  | - 시스템 환경 설정 파일이 있는 곳
 | `/tmp` | temp | - 임시 파일 저장
@@ -55,12 +55,14 @@
 > `/` VS `/root`
 > - `/` 와 `/root` 디렉토리는 이름은 같지만 다른 디렉토리이다
 
-> `bin` VS `sbin` 
-> - bin`은 일반 및 root사용자들이 사용하고, `sbin`은 root 사용자에게 이용하도록 권장
-> - 
+> __Note__ <br>
+>  **`bin` VS `sbin`**
+> - `bin`은 일반 및 root사용자들이 사용하고, `sbin`은 root 사용자에게 이용하도록 권장 
   
   
 > `/etc` 
+> - `/etc/passwd` : 사용자 정보(username, 암호화된 패스워드 등)가 들어있다. 
+> - `/etc/shadow`: 새로운 섀도우 패스워드(`/etc/passwd`의 암호화된 패스워드) 저장
 > - `/etc/httpd` : 아파치 웹 서버의 설정, 로그 파일이 들어있다
 > - `/etc/security`: 터미널 보안에 관련된 설정이 있다
 > - `/etc/ssh`: secure shell 설정 파일이 있다
@@ -72,20 +74,25 @@
 > - 시스템 운영 중 시변경된 스템 자료 데이터를 저장하는 정소
 > - /var/cache: 어플리케이션의 캐시 데이터 저장
 > - /var/lib: 어플리케이션/시스템 관련 상태 정보 수집
-> - /var/local: /usr/local에 연결된 소프트웨어의 가변 정보를 포함한 ???????
-> - /var/lock: lock file 존재 ??????
+> - /var/local: /usr/local에 설치된 프로그램(시스템 관리자가 설치한 프로그램)들의 데이터 보관
+> - /var/lock: 잠금파일(lock file) 존재
 > - /var/opt: opt에 대한 가변 데이터
-> - /var/run: 시스템 부팅 이후 runtime 가변 데이터
-> - /var/spool: 어플리케이션 🔗**spool**<sup id="a1">[1](#f1)</sup> 데이터 저장
-> - /var/tmp: 시스템이 재부팅되는 동안 보존되는 임시 파일 저장
-> - /var/log: 시스템 로그 정보 저장 파일
+> - /var/run: 시스템 부팅 이후의 시스템의 현재 정보 저장(부팅 시 내용 변경)
+> - /var/run/utmp: 현재 로그인한 사용자들 정보
+> - /var/spool: 어플리케이션 🔗**spool**<sup id="a1">[1](#f1)</sup> 데이터 저장<br> 
+> - /var/spool/lpd: 프린트 임시 디렉토리
+> - /var/spool/maueue: 발송을 위한 메일 임시 저장 디렉토리
+> - /var/tmp: 시스템이 재부팅되는 동안 보존되는 임시 파일 저장. `tmp`보다 오래 유지
+> - /var/log: 시스템 로그 정보 저장 파일 
+> - /var/log/wtmp: login의 로그 파일 저장(시스템의 로그인, 로그아웃 정보 기록)
+> - /var/log/messages: syslog의 로그 파일 저장(커널, 시스템 프로그램의 모든 메시지 기록)
 > - /var/named: 네임서버 설정 파일
   
 > `/proc` process
 > - 가상 파일 시스템(디스크에는 존재하지 않으므로 물리적 용량이 없다)
 > - 커널이 메모리에 적재된 후에 생성되는 디렉토리(부팅 시 초기화)
 > - 메모리에 존재하는 작업들이 파일 형태로 이곳에 저장된다
-> - 각 프로세스는 자신만의 디렉토리를 /proc 아래에 갖고 있다<br>
+> - 각 프로세스는 자신만의 디렉토리를 /proc 아래에 갖고 있다
 > (이때 프로세스 식별 번호(Process Identification Number, PID)로 구분)<br>
 > - `/proc/(PID)`: 해당 PID를 갖는 프로세스에 대한 정보가 있는 디렉토리
 > - `/proc/cpuinfo`: 프로세서 정보 확인 
@@ -102,6 +109,7 @@
 > `/lib` library
 > - 프로그램이 의존하는 라이브러리 파일 존재
 > - /lib/modules: 커널 모듈 파일 존재
+
 
 <!--
 ### 파일 구조 관련 
