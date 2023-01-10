@@ -7,11 +7,11 @@
 
 ### 1. inode
 - 리눅스/유닉스 파일 시스템에서 사용하는 자료구조로, 한 개의 inode는 64byte로 구성된다
+- 인덱스 블록 기법에 속한다 🔗<sup id="a3">[1](#f3)</sup>
 - 모든 파일/디렉토리는 하나의 inode를 갖는다
 - 파일이 생성될 때 inode(Index Node)를 부여한다. 
 - 디스크에서는 파일 내용을 수정할 때에만 파일이 변경되고 저장되지만, <br>
  inode는 소유자, 허가 내용, 링크가 변경될 때에도 변경된다.
-- 인덱스 블록 기법 ????
 - inode의 구성 요소는 다음과 같다<br>
 
 | 명령어 | 특징 |
@@ -19,11 +19,12 @@
 | super block | 전체 파일시스템 정보 표시<br> -`df`명령어로 확인할 수 있는 정보를 담는다 |
 | inode block | - 파일의 메타데이터를 저장한 블록<br> -파일의 소유권, 허가권, 파일 종류, 생성 시간, 데이터 저장 위치 등이 있다 <br> -`ls -al` 명령어로 확인할 수 있는 정보를 담는다 |
 | data block | - 실제 파일 내용이 저장되는 디스크 블록 집합 <br> - 파일 크기에 따라 Direct block, Single Indirect block, Double indirect block, Triple indirect block으로 나눈다 |
-| diret block | inode 블록 안에 직접 저장되는 데이터 블록 |
+| diret block | - 12개 존재(각각 하나씩 single, double, triple indirect block를 가진다) <br> - inode 블록 안에 직접 저장되는 데이터 블록 |
 | single indiret block | 데이터가 저장된 주소를 저장하여 더 많은 데이터 보관 |
 | double indirect block | 주소값 참조에 참조를 하여 더 많은 데이터 보관 |
 | triple indirect block | 주소값 참조에 참조에 참조를 하여 더 많은 데이터 보관 |
 
+<!--
 - 각 inode의 메타 데이터에는 파일의 소유권, 허가권, 파일 종류, 해당 파일의 주소 등이 있다
 - inode가 모여있는 공간을 inode 블록이라 부른다 -->
 
@@ -62,7 +63,6 @@
 #### - 2. 소프트 링크(심볼릭 링크) 파일
 - 또다른 inode를 생성하여, 이것이 원본 파일의 데이터 경로(포인터)를 가리키는 구조
 - 파일, 디렉토리 모두 참조 가능
-- 
 - 원본 파일이 삭제되면 실제 데이터 블록을 참조하던 inode도 삭제되므로 의미가 없어진다
 
 ### 4. 장치 파일
@@ -195,7 +195,17 @@
 - inode가 모여있는 공간을 inode 블록이라 부른다 -->
 
 ---
-<b id="f2">1. 디스크 탐색 시간 감소(spool)</b><br>
+<b id="f3"> 1. 인덱스 블록 기법(spool)</b><br>
+<!-- https://velog.io/@yaaloo/OS-%ED%8C%8C%EC%9D%BC-%EC%8B%9C%EC%8A%A4%ED%85%9C-->
+   파일 저장 방식은 다음과 같다.<br>
+   - 연속 저장: 
+   - 블록 체인:
+   - 인데스 블록 기법
+  [↩](#a3)
+  
+
+
+<b id="f2">2. 디스크 탐색 시간 감소(spool)</b><br>
    파일 시스템은 파티션 당 하나씩 생성된다. 이때 파티션에 EXT2를 구축하면 파티션이 다수의 블록 그룹으로 나뉜다.<br>
    파일 시스템을 블록 그룹으로 나누면, 같은 파일에 대한 inode, data block이 인접한 실린더에 위치한다.<br>
    그에 따라 디스크 탐색 시간을 줄일 수 있게 된다.
@@ -203,7 +213,7 @@
   
 
 
-<b id="f1">2. 스폴(spool)</b><br>
+<b id="f1">3. 스폴(spool)</b><br>
   스폴(SPOOL, Simultaneous Peripheral Operation On-Line)은 <br>대기열 관리 기법으로,
   CPU와 주변장치의 처리 속도 차이에 따른 대기 시간을 줄이는 방식이다. <br>
   CPU의 처리 속도에 비해 입출력 장치의 처리 속도가 훨씬 느리다.<br>
