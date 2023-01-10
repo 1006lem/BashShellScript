@@ -3,26 +3,29 @@
 ## 1. 리눅스 파일 시스템이란?
 - 유닉스 계열의 오픈소스 운영체제인 리눅스는 모든 것을 **파일**로 관리한다.
 - **파일 시스템(File System)** 이란 컴퓨터에서 파일이나 자료를 쉽게 접근할 수 있도록 보관하는 체제를 말한다.<br>
-~~- 리눅스 파일 시스템 정보는 man fs명령어를 통해서도 얻을 수 있다.~~
+- 리눅스 파일 시스템 정보는 `man fs`명령어를 통해서도 얻을 수 있다.
 
 ### 1. inode
 - 리눅스/유닉스 파일 시스템에서 사용하는 자료구조로, 한 개의 inode는 64byte로 구성된다
 - 인덱스 블록 기법에 속한다 🔗<sup id="a3">[1](#f3)</sup>
-- 모든 파일/디렉토리는 하나의 inode를 갖는다
-- 파일이 생성될 때 inode(Index Node)를 부여한다. 
+- 모든 파일/디렉토리는 하나의 inode(Index Node)를 갖는다
 - 디스크에서는 파일 내용을 수정할 때에만 파일이 변경되고 저장되지만, <br>
  inode는 소유자, 허가 내용, 링크가 변경될 때에도 변경된다.
 - inode의 구성 요소는 다음과 같다<br>
 
 | 명령어 | 특징 |
 | :----: | ------------------------------------------- |
-| super block | 전체 파일시스템 정보 표시<br> -`df`명령어로 확인할 수 있는 정보를 담는다 |
-| inode block | - 파일의 메타데이터를 저장한 블록<br> -파일의 소유권, 허가권, 파일 종류, 생성 시간, 데이터 저장 위치 등이 있다 <br> -`ls -al` 명령어로 확인할 수 있는 정보를 담는다 |
-| data block | - 실제 파일 내용이 저장되는 디스크 블록 집합 <br> - 파일 크기에 따라 Direct block, Single Indirect block, Double indirect block, Triple indirect block으로 나눈다 |
-| diret block | - 12개 존재(각각 하나씩 single, double, triple indirect block를 가진다) <br> - inode 블록 안에 직접 저장되는 데이터 블록 |
-| single indiret block | 데이터가 저장된 주소를 저장하여 더 많은 데이터 보관 |
-| double indirect block | 주소값 참조에 참조를 하여 더 많은 데이터 보관 |
-| triple indirect block | 주소값 참조에 참조에 참조를 하여 더 많은 데이터 보관 |
+| super block | 전체 **파일시스템 정보** 표시<br> -`df`명령어로 확인할 수 있는 정보를 담는다 |
+| inode block | - 파일의 **메타데이터** 를 저장한 블록<br> -파일의 소유권, 허가권, 파일 종류, 생성 시간, 데이터 저장 위치 등이 있다 <br> -`ls -al` 명령어로 확인할 수 있는 정보를 담는다 |
+| data block | - 실제 파일 내용이 저장되는 디스크 블록 집합 <br> - 파일 크기에 따라 **Direct block**, **Single Indirect block**, **Double indirect block**, **Triple indirect block**으로 나눈다 |
+| diret block | - 12개 존재(각각 하나씩 single, double, triple indirect block를 가진다) <br> - inode 블록 안에 **직접 저장** 되는 데이터 블록 |
+| single indiret block | 데이터가 저장된 **주소** 를 저장하여 더 많은 데이터 보관 |
+| double indirect block | **주소값 참조에 참조** 를 하여 더 많은 데이터 보관 |
+| triple indirect block | **주소값 참조에 참조에 참조** 를 하여 더 많은 데이터 보관 |
+
+[![inode Data Block 구조]([http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f))]([https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/](https://driip.me/dbd9bc58-0ce1-437b-af4f-7b2bde2b1bf3))
+
+
 
 <!--
 - 각 inode의 메타 데이터에는 파일의 소유권, 허가권, 파일 종류, 해당 파일의 주소 등이 있다
