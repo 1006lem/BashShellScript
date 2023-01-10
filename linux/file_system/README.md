@@ -7,7 +7,7 @@
 
 ### 1. inode
 - 리눅스/유닉스 파일 시스템에서 사용하는 자료구조로, 한 개의 inode는 64byte로 구성된다
-- 인덱스 블록 기법에 속한다 🔗<sup id="a3">[1](#f3)</sup>
+- **인덱스 블록 기법** 에 속한다 🔗<sup id="a3">[1](#f3)</sup>
 - 모든 파일/디렉토리는 하나의 inode(Index Node)를 갖는다
 - 디스크에서는 파일 내용을 수정할 때에만 파일이 변경되고 저장되지만, <br>
  inode는 소유자, 허가 내용, 링크가 변경될 때에도 변경된다.
@@ -200,8 +200,9 @@
 ---
 <b id="f3"> 1. 인덱스 블록 기법(spool)</b><br>
 <!-- https://velog.io/@yaaloo/OS-%ED%8C%8C%EC%9D%BC-%EC%8B%9C%EC%8A%A4%ED%85%9C-->
-   파일 저장 방식은 다음과 같다.<br>
-   - 연속 저장: 
+   **파일 저장 방식** 은 다음과 같다.<br>
+   *더 자세한 내용은 다음 링크의 **[2.4 할당 방법](https://github.com/boanlab/study-notes/blob/main/major_subjects/operating_system/06_fileSystem/README.md)** 을 참고하자*
+   - 연속 저장: 연속적인 공간에 파일 저장
    - 블록 체인:
    - 인데스 블록 기법
   [↩](#a3)
