@@ -48,4 +48,5 @@
 - 리눅스의 경우 PnP가 동작하지 않는다
 
 
-
+부팅 과정정
+https://blog.naver.com/goodday2k/220535307917
