@@ -23,7 +23,7 @@
 | double indirect block | **주소값 참조에 참조** 를 하여 더 많은 데이터 보관 |
 | triple indirect block | **주소값 참조에 참조에 참조** 를 하여 더 많은 데이터 보관 |
 
-[![inode Data Block 구조]([http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f))]([https://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/](https://driip.me/dbd9bc58-0ce1-437b-af4f-7b2bde2b1bf3))
+[![inode Data Block 구조](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f)(https://driip.me/dbd9bc58-0ce1-437b-af4f-7b2bde2b1bf3)
 
 
 
