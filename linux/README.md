@@ -12,4 +12,4 @@
 
 ### 5. [VI 편집기](vim/README.md)
 
-### 6. [환경 설정 (실습)](case_study/README.md)
+### 6. [(실습)](case_study/README.md)
