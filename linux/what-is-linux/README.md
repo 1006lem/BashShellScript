@@ -25,7 +25,7 @@
 - centOS에서 기본적으로 사용하는 쉘: `Bash` 쉘(Bourne Again Shell)
 - 어떤 쉘을 사용하는지 확인하는 방법:
 ```console
-# echo $SHELL
+$ echo $SHELL
 ```
 
 ### 리눅스 파이프
