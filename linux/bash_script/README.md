@@ -58,7 +58,7 @@ $ echo "Today is `date`"
 ```console
 $ ./test.sh >> /dev/null 2>&1 
 #표준 출력이 필요 없다(2는 에러, 1은 표준 출력) 
-# 2>&1: 표준 에러 출력을 표준출력장치로 저장된 /dev/null로 리다이렉트한다
+#2>&1: 표준 에러 출력을 표준출력장치로 저장된 /dev/null로 리다이렉트한다
 #/dev/null은 항상 비어있는 파일
 ```
 - **2>&1** 동작 이해: <br>
@@ -133,11 +133,11 @@ $ export JAVA_HOME=/usr/hava/jdk1.6.0
 | EDITOR | 기본 편집기 이름 |
 
 ```console
- $ export
- #환경 변수 목록 확인
+$ export
+#환경 변수 목록 확인
  
- $ echo $HOME 
- #home디렉토리의 경로 표시
+$ echo $HOME 
+#home디렉토리의 경로 표시
 ```
 <br> 
  
