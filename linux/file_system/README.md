@@ -1,8 +1,8 @@
 # 3. 파일 구조
 
 -[1. 리눅스 파일 시스템이란?](#1-리눅스-파일-시스템이란)<br>
-  - [1. inode](#1-inode) <br>
-  - [2. 리눅스의 대표적인 파일 시스템](#2-리눅스의-대표적인-파일-시스템) <br>
+  - [1. inode](#--1-inode) <br>
+  - [2. 리눅스의 대표적인 파일 시스템](#--2-리눅스의-대표적인-파일-시스템) <br>
     - [1. MINIX](#--1-minix) <br>
     - [2. EXT2](#--2-ext2) <br>
     - [3. xiafs](#--3-xiafs) <br> 
@@ -26,7 +26,7 @@
 - **파일 시스템(File System)** 이란 컴퓨터에서 파일이나 자료를 쉽게 접근할 수 있도록 보관하는 체제를 말한다.<br>
 - 리눅스 파일 시스템 정보는 `man fs`명령어를 통해서도 얻을 수 있다.
 
-### 1. inode
+### - 1. inode
 - 리눅스/유닉스 파일 시스템에서 사용하는 자료구조로, 한 개의 inode는 64byte로 구성된다
 - **인덱스 블록 기법** 에 속한다 🔗<sup id="a3">[1](#f3)</sup>
 - 모든 파일/디렉토리는 하나의 inode(Index Node)를 갖는다
@@ -44,30 +44,57 @@
 | double indirect block | **주소값 참조에 참조** 를 하여 더 많은 데이터 보관 |
 | triple indirect block | **주소값 참조에 참조에 참조** 를 하여 더 많은 데이터 보관 |
 
-[![inodeDataBlock구조](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f)](https://driip.me/dbd9bc58-0ce1-437b-af4f-7b2bde2b1bf3)
+<!--
+<img width = "80%" src="https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f"> -->
 
-
-
+<!--
+[![inodeDataBlock구조](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe5485c09-fe76-4d1f-a007-550ce005c1c2%2FUntitled.png&blockId=05be8ef1-f3d0-4b29-8a4b-e8b18f2de89f)](https://driip.me/dbd9bc58-0ce1-437b-af4f-7b2bde2b1bf3) -->
 <!--
 - 각 inode의 메타 데이터에는 파일의 소유권, 허가권, 파일 종류, 해당 파일의 주소 등이 있다
 - inode가 모여있는 공간을 inode 블록이라 부른다 -->
+<br>
 
+---
 
+### - 2. 리눅스의 대표적인 파일 시스템
 
-### 2. 리눅스의 대표적인 파일 시스템
-#### - 1. MINIX
-- 리눅스에서 가장 먼저 사용된 파일 시스템
-- 파일 이름은 최대 14바이트, 단일 파일당 최대 64MB 지원 등 성능 제한이 있다
-#### - 2. EXT2
-- 파일 이름은 255 바이트, 단일 파일당 최대 2GB, 디스크 4TB를 지원한다.
-- 디스크 탐색 시간을 줄일 수 있다.🔗<sup id="a2">[1](#f2)</sup>
-- 시스템이 비정상 종료되었을 때 부팅 시 일관성 검사를 진행한다. <br>
- 이때 데이터가 많은 경우 검사 시간이 길어진다는 단점이 있다.
-#### - 3. xiafs
-- 파일 이름, 시스템 크기의 한계 등 minix를 수정한 파일 시스템
-#### - 4. XFS
-- 고성능 저널링 시스템
+#### 1. 디스크 기반 파일 시스템
+- 하드디스크, CD-ROM 등을 기반으로 하는 파일 시스템
+
+| 파일 시스템 | 설명 |
+| :---: | --- |
+| MINIX | - 리눅스에서 가장 먼저 사용된 파일 시스템 <br>- 파일 이름은 최대 14바이트, 단일 파일당 최대 64MB 지원 등 성능 제한이 있다 <br>- 플로피 디스크 등 작은 크기의 저장소 장치로 사용된다 |
+| EXT2 | - 리눅스에서 사용하기 위해 만들어진 확장 파일 시스템(Extend File System)<br> - EXT파일 시스템의 종류로 EXT2, EXT3, EXT4가 존재 <br> - 파일 이름은 255 바이트, 단일 파일당 최대 2GB, 디스크 4TB를 지원한다 <br> - 디스크 탐색 시간을 줄일 수 있다.🔗<sup id="a2">[1](#f2)</sup> <br> - 시스템이 비정상 종료되었을 때 부팅 시 일관성 검사를 진행한다<br>    (이때 데이터가 많은 경우 검사 시간이 길어진다는 단점이 있다) |
+|XIAFS| - 파일 이름, 시스템 크기의 한계 등 minix를 수정한 파일 시스템 |
+
+##### - 4. XFS
+- 기존 IRIX시스템에서 사용되던 파일 시스템이 리눅스로 이전된 것
+- 고성능 **저널링 시스템**
+- 저널링 파일 시스템을 사용하는 이유중 하나는 **높은 데이터 복구 확률**
 - **현재 거의 대부분의 리눅스 배포판에서 XFS 파일 시스템 사용**
+- 저널링 파일 시스템으로는 EXT3, JFS, ReiserFS 등이 있다
+
+##### - 5. ISO9660
+- ISO 9660표준에 따른 CD-ROM 파일 시스템
+- **운영체제 및 플랫폼에 무관**하게 사용 가능한 표준 방식
+- DVD 또는 CD-ROM 마운트 시 사용되는 파일 시스템
+
+##### - 7. UDFS
+- UDF(Universal Disk Format) 규격 파일 시스템
+- DVD의 표준 파일 시스템
+
+---
+
+#### 2. 분산 파일 시스템
+##### - 1. NFS(Network File System)
+- 네트워크 기반의 분산 파일 시스템
+- 공유된 자원을 로컬 시스템의 자원처럼 사용 가능
+##### - 2. SMB(Server Message Block)
+- window와 linux/unix간 디렉토리 및 파일 공유 기능 지원
+- 리눅스에서 Samba 서비스를 통해 SMB공유 제공 가능
+<br> 
+
+- <a>[분산 파일 시스템](https://d2.naver.com/helloworld/258077)</a>
 
 ---
 ## 2. 리눅스 파일 종류
