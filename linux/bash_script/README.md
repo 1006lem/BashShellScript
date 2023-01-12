@@ -81,7 +81,7 @@ $ ./test.sh >> /dev/null 2>&1
  -**/etc/bash.bashrc** 파일은 사용자가 로컬 터미널 세션을 열 때마다 실행하는 파일
 - 특정 사용자에게만 환경변수를 영구적으로 적용하고 싶다면 **~/.bashrc**파일 수정
  - 추가로, **set** 을 통해 **위치 매개변수** 설정 가능
- - 추가로, set은[vi 편집기의 ex모드에서](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/9-추가-ex-모드-명령어)에서 사용되기도 했다.
+ - 추가로, set은[vi 편집기의 ex모드에서](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#9-추가-ex-모드-명령어)에서 사용되기도 했다.
  
  ---
  
