@@ -1,5 +1,5 @@
 # 3. 파일 구조
-**[2.4 할당 방법](https://github.com/boanlab/study-notes/blob/main/major_subjects/operating_system/06_fileSystem/README.md/#24-할당-방법)
+
 ---
 ## contents
 -[1. 리눅스 파일 시스템이란?](#1-리눅스-파일-시스템이란)<br>
@@ -234,7 +234,7 @@
 
 <b id="f3"> 1. 인덱스 블록 기법(spool)</b><br>
    *더 자세한 내용은 다음 링크의 
-   **[2.4 할당 방법](https://github.com/boanlab/study-notes/blob/main/major_subjects/operating_system/06_fileSystem/README.md)** 을 참고하자*
+   **[2.4 할당 방법](https://github.com/boanlab/study-notes/blob/main/major_subjects/operating_system/06_fileSystem/README.md/#24-할당-방법)** 을 참고하자*
    > **파일 저장 방식** <br>
    > 
    | 파일 저장 방식 | 설명 |
