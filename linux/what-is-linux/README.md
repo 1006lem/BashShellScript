@@ -38,6 +38,13 @@
 
 ### 파일 디스크립터
 
+- 리눅스에서 프로세스가 파일을 열 때, 음이 아닌 정수인 file descriptor가 반환된다
+- file descriptor를 통해 파일에 쉽게 접근 가능
+- 프로세스마다 하나의 file descriptor table을 가지고 있다<br>
+  (file descriptor는 file descriptor table의 인덱스)
+- 같은 파일이라 할지라도 프로세스마다 file descriptor는 다를 수도 있다
+
+> 프로세스의 기본적인 파일 디스크립터
 | 파일 디스크립터 | 이름 | 기능 | 표준장치
 | :---: | :---: | --- | :---: 
 | 0 | stdin | 명령어에 입력될 내용 저장 | 키보드
