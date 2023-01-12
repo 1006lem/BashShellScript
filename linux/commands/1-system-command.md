@@ -3,8 +3,8 @@
 
 | 명령어 | 특징 |
 | :----: | ------------------------------------------- |
-| crontab | 주기적으로 실행하고 싶은 명령어 등록 |
-| groupadd |  |
+| [crontab](#--crontab) | 주기적으로 실행하고 싶은 명령어 등록 |
+| [groupadd](#--) |  |
 | useradd |  |
 | uname | 시스템 정보 표시 |
 | free | 메모리 상태 확인 |
@@ -31,7 +31,7 @@
 | yes | <kbd>Ctrl</kbd> + <kbd>C</kbd>로 멈출 때까지 특정 문자열 반복 출력 |
 
 ---
-#### -crontab
+#### - crontab
 - **특정 시간**에 **특정 작업**을 할 때 사용
 
 주요 옵션
@@ -52,7 +52,7 @@ $ crontab -e #편집 가능한 화면 로딩됨
 - [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md)을 이용해 넣고 싶은 명령어를 작성한다
 <br> (작성을 마치면 `:wq`를 통해 크롭탭을 갱신하고 편집 화면에서 나올 것)
 
-##### crontab 주기 결정 (crontab 명령 형식)
+- **crontab 주기 결정 (crontab 명령 형식)**
 
 | * | * | * | * | * |
 | :---: | :---: | :---: | :---: | :---: |
@@ -90,7 +90,7 @@ $ 0-30 * * * * /home/script/test.sh
 # **매 10분마다** /home/script/test.sh 실행
 ```
 
-##### crontab 내용 확인, 삭제, redirection
+**crontab 내용 확인, 삭제, redirection**
 - 로그를 남기고 싶다면 (명령어) >> (파일명) 2>&1
 - 로그를 남기고 싶지 않다면 파일명을 `/dev/null` 로 입력
 - `2>&1`은 
@@ -98,6 +98,7 @@ $ 0-30 * * * * /home/script/test.sh
 $ crontab -r  #크론탭에 설정된 내용 출력
 $ crintab -r # 크론탭으로 생성된 내용 삭제
 ```
+
 ```console
 $
 ```
