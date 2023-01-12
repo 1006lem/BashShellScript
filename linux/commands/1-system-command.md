@@ -7,7 +7,6 @@
 | groupadd |  |
 | useradd |  |
 | uname | 시스템 정보 표시 |
-
 | free | 메모리 상태 확인 |
 | top | 프로세스 정보를 실시간으로 표시 |
 | ps | 프로세스 정보 표시 |
@@ -63,6 +62,12 @@ foo@bar:~$ uname
 foo
 ```
 
+#### - uname
+```console
+foo@bar:~$ uname
+foo
+```
+
 
 #### - free
 - 서버의 메모리 성능 출력
@@ -96,3 +101,200 @@ foo
 foo@bar:~$ uname
 foo
 ```
+
+#### - exec
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+#### - watch
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+#### - which
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+#### - htop
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+
+#### - jobs
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - journalctl
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - logrotate
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - man
+```console
+foo@bar:~$ uname
+foo
+```
+#### - nohup
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - ntp
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - openssl
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+#### - pgrep
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - sar
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - systemctl
+```console
+foo@bar:~$ uname
+foo
+```
+#### - ulimit
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - uname
+```console
+foo@bar:~$ uname
+foo
+```
+
+#### - wait
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+#### - yes
+```console
+foo@bar:~$ uname
+foo
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
