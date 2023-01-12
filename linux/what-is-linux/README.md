@@ -1,7 +1,9 @@
 
-## :books: _**'Bash 쉘스크립트 개발 시작하기'**_ 책 정리
-- 🔗: https://wikidocs.net/book/2370
-- ℹ️: `CentOS` 6.9 버전, `Ubuntu` 기반의 `Bash` 쉘 사용
+## :link: 참고 링크
+* #### :books: [Bash 쉘스크립트 개발 시작하기](https://wikidocs.net/book/2370)
+<!-- - ℹ️: `CentOS` 6.9 버전, `Ubuntu` 기반의 `Bash` 쉘 사용 -->
+* ####  [리눅스 부팅 과정](https://blog.naver.com/goodday2k/220535307917)
+
 ---
 ## 1. 리눅스 기초
 
@@ -12,9 +14,10 @@
 - 대표적인 리눅스 배포판은 우분투, 레드햇, CentOS, 페도라, 데비안, Gentoo, Knoppix, Linux Mint, Mandriva, OpenSUSE, Pardus 등이 있다
 - 다중 처리, 다중 사용자 시스템에 속한다
 
+<!--
 ### 8. 리눅스 구조
 
-### 9. 파일 시스템 http://doc.kldp.org/Translations/html/SysAdminGuide-KLDP/x1087.html
+### 9. 파일 시스템 http://doc.kldp.org/Translations/html/SysAdminGuide-KLDP/x1087.html -->
 
 
 ### 2. 쉘
@@ -42,11 +45,56 @@
 - 리눅스에서는 하드디스크 파티션, CD/DVD, USB 메모리 등을 사용하기 위해서는<br> 지정된 위치에 연결해야 한다
 - 마운트 정보 확인 명령어 `df -f`, `mount`
 - 마운트 해제 명령어: `ummount 장치이름` 
+- 리눅스의 각 파일 시스템은 하나의 디렉토리에 마운트되어 있다
+
 
 ### 7. PnP(Plug and Play)
 - 내부에서 마운트 작업이 이루어짐
-- 리눅스의 경우 PnP가 동작하지 않는다
+- window는 PnP OS이지만 리눅스는 PnP OS가 아니다
+- 리눅스도 BIOS가 버스 리소스를 설정하는 등 PnP역할을 하고 있으며<br>
+PCI 버스 상에서도 PnP에 해당하는 기능을 구현하고 있다
+- 이 이외의 경우, USB메모리를 사용하는 등의 경우에는 사용자가 직접 **마운트** 해야 한다
+
+### 8. 프로세스 실행 방식
+
+| 프로세스 실행 방식 | 설명 | 
+| :---: | --- |
+| 포그라운드<br>(foreground) | - 키보드 입력을 받아 동작하는 방식 <br> - 다른 작업을 실행하기 위해서는 작업이 끝날 때까지 기다려야 함 |
+| 백그라운드<br>(background) | - 사용자와 대화 없이 실행되는 방식 <br> - 명령어 뒤에 `&`를 붙여 실행 <br>|
+
+- 백그라운드 환경에서 `nohup` 커맨드를 이용하면 터미널 세션이 종료되어도 **작업이 종료될 때까지** 프로세스를 실행한다
+
+### 주요 패키지 매니지
+- 리눅스의 주요 모듈은 패키지 매니저를 통해 설치 가능하다
+- **패키지 설치 명령** 은 yum(레드햇 계열, CentOS), apt(데비안 계열, 우분투)가 있다.
+
+#### 1. yum 
+
+| 명령 | 설명 |
+| :---: |---|
+| yum update | 설치된 프로그램 업데이트 | 
+| yum upgrade | 설치된 프로그램 업데이트, <br> **더이상 사용되지 않는 파일 삭제** | 
+| yum update 프로그램 | 프로그램 업데이트 | 
+| yum install 프로그램 | 프로그램 설치 |
+| yum list 프로그램 | 설치 가능한 프로그램 버전 출력 |
+| yum remove 프로그램 | 프로그램 삭제  | 
+
+#### 2. apt
+- apt-get보다 더 나은 대화형식(상태바 등)을 제공하는 것이 apt
+- **apt** 는 기존의 **apt-get, apt-cache** 등을 통합하여 나온 패키지 매니징 툴
+
+| apt 명령 | 설명 |
+| :---: | --- |
+| apt update | 설치 가능한 리스트 업데이트 | 
+| apt upgrade | 모든 패키지 업그레이드 | 
+| apt full-upgrade | 모든 패키지 업그레이드<br>(만일 업그레이드를 위해 구 버전 패키지를 삭제해야 한다면 삭제 수행) | 
+| apt install 패키지 | 패키지 설치 | 
+| apt remove 패키지 | 패키지 삭제 (설정 파일은 삭제 x) | 
+| apt purge 패키지 | 패키지 삭제 (설정 파일 삭제) | 
+| apt search 패키지 | 패키지 검색 |
+| apt show 패키지| 패키지 상세 정보 출력 |
+| apt list | 전체 패키지 목록 조회 |
 
 
-부팅 과정정
+부팅 과정
 https://blog.naver.com/goodday2k/220535307917
