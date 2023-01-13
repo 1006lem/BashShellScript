@@ -124,5 +124,4 @@ PCI 버스 상에서도 PnP에 해당하는 기능을 구현하고 있다
 | apt list | 전체 패키지 목록 조회 |
 
 
-부팅 과정
-https://blog.naver.com/goodday2k/220535307917
+[리눅스 부팅 과정](https://blog.naver.com/goodday2k/220535307917)
