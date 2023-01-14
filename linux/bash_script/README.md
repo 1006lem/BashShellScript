@@ -326,7 +326,7 @@ $ cat test.sh
 ```
 #!/usr/bin/bash
 
-name = "kim"
+name="kim"
 # 대입 문자 = 양옆으로 공백 x
 
 echo $name
@@ -343,6 +343,7 @@ function name_change(){
 }
 name_change 
 #함수 호출
+
 echo ${name}
 #전역 변수인 "kim" 출력
 
@@ -419,13 +420,13 @@ mul=`expr $number1 \* $number2`
  echo "hi"
  
  : << "END"    #주석 시작
- plus = $((number1 + number2))
+ plus=$((number1 + number2))
  echo $(plus)
  END           #주석 끝
  
  echo "Hello"
  ```
- - 프로그램 실행 시 hi와 hello만 출력된다
+ - _프로그램 실행 시 hi와 hello만 출력된다_
  
  <br>
  
@@ -453,7 +454,7 @@ mul=`expr $number1 \* $number2`
 | > | - 문자열을 사전순으로 정렬 시 오른쪽쪽이 선행되는 경우 |
 | && | - 논리식 AND |
 | \|\| | - 논리식 OR |
-| !| | - 논리식 NOT |
+| !\| | - 논리식 NOT |
 
 ```
 #!/usr/bin/bash
@@ -484,7 +485,9 @@ done
 - **continue**, **break**문 그대로 사용 가능
 
 <br>
+
 - 예제
+
 ```
 #!/bin/bash
 
@@ -497,7 +500,7 @@ done
 ```
 <br>
 
-#### for문
+#### - for문
 
 - for문 형식
   
@@ -510,8 +513,11 @@ done
 ```
 - **무한 반복**은 `for(( ; ; ))` 와 같이 사용 
 - **continue, break**문 사용 가능
+
 <br>
+
 - 예제 
+
 ```
 #!/bin/bash
 
@@ -531,6 +537,7 @@ done
 주의: for문의 범위로 `{시작..종료}` 형식을 갖춰, 순차적으로 증가하며 반복시킨다
  
  <br>
+ 
 ```
 #!/bin/bash
 
