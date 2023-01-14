@@ -200,7 +200,7 @@ PS1을 설정할 때 **특수 기호(이스케이프 문자)** 를 이용해 설
 
 ```console
 $ PS1="\[\033[0;34m\]\u-\d@\w$"
-#색상은 파란색으로, 형식은 **사용자명-현재시간$** 꼴로 설정한다
+#색상은 파란색으로, 형식은 사용자명-현재시간$ 꼴로 설정한다
 ```
 
 
@@ -272,7 +272,7 @@ $ sudo apt-get install git
 
 ```console
 $ echo $-
-#실행 결과: himBHs(플래그 정보)
+#실행 결과: himBHs(플래그 정보 참고)
 ```
 
 ---
@@ -298,10 +298,6 @@ $ echo $-
 - 이러한 쉘 선언문을 **Shebang** 이라고 한다.
 
 ```console
-vi script.sh # vi편집기를 이용해 script 작성
-$ bash script.sh 
-```
-```console
 #쉘 스크립트 작성(test.sh)
 #! /bin/bash
 echo "Hello World!"
@@ -309,6 +305,11 @@ exit 0
  
 #스크립트 실행
 $ cat test.sh
+```
+
+```console
+vi script.sh # vi편집기를 이용해 script 작성
+$ bash script.sh # script 실행
 ```
 
 <br>
@@ -460,8 +461,10 @@ mul=`expr $number1 \* $number2`
 #!/usr/bin/bash
 
 num=0
+
+#eq 연산자를 이용해 같은지 확인
 if [ $num -eq 0]; then
-　echo "nuber is 0"
+　echo "number is 0"
  else 
 　echo "number is not 0"
 fi
@@ -534,7 +537,7 @@ done
 (생략)
 20
 ```
-주의: for문의 범위로 `{시작..종료}` 형식을 갖춰, 순차적으로 증가하며 반복시킨다
+* 주의: for문의 범위로 `{시작..종료}` 형식을 갖춰, 순차적으로 증가하며 반복시킨다
  
  <br>
  
@@ -553,7 +556,8 @@ done
 32
 
 ```
-주의: `arr[@]` 를 통해 arr배열의 모든 원소를 가져온다
+* 주의: `arr[@]` 를 통해 arr배열의 모든 원소를 가져온다
+
  <br>
  
  ```
@@ -571,6 +575,7 @@ B
 C
 ```
 <br>
+<br>
 
  ```
 #!/bin/bash
@@ -584,7 +589,7 @@ done
 1
 2
 ```
-주의: 이중 괄호를 통해 C언어 스타일의 반복문 문법 사용 가능
+* 주의: 이중 괄호를 통해 C언어 스타일의 반복문 문법 사용 가능
  
  <br>
  
