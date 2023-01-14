@@ -445,7 +445,7 @@ mul=`expr $number1 \* $number2`
 | < | - 문자열을 사전순으로 정렬 시 왼쪽이 선행되는 경우 |
 | > | - 문자열을 사전순으로 정렬 시 오른쪽쪽이 선행되는 경우 |
 | && | - 논리식 AND |
-| \|| | - 논리식 OR |
+| \|\| | - 논리식 OR |
 | !| | - 논리식 NOT |
 
 ```
@@ -461,7 +461,108 @@ fi
 
 ### 반복문
 
+#### While문
+
+- while문 형식
+
+```
+while [조건]
+do 
+  명령
+done
+```
+- 무한 루프의 조건부는 `while :` 로 표시
+- continue, break문 그대로 사용 가능
+
+- 예제
+```
+#!/bin/bash
+
+num = 0
+while [ $num -le 2] #숫자가 2보다 작은 경우 반복
+do
+ echo "${num}" 
+ ((num++))
+done
+```
+
+#### for문
+
+- for문 형식
+  
+```
+for [배열 아이템] in [배열,리스트,...]
+do
+ 명령
+ ${배열 아이템}
+done
+```
+- if, continue, break문 사용 가능
+- 무한 반복은 for(( ; ; )) 와 같이 사용 
+- 예제 
+```
+#!/bin/bash
+
+for anyInt in {00..20}
+#{00...20}은 00, 01, 02, 03, ... 20을 의미 (대체하여 사용하여도 무관)
+do
+ echo {anyInt}
+done
+
+#출력
+00
+01
+02
+(생략)
+20
+```
+주의: for문의 범위로 `{시작..종료}` 형식을 갖춰, 순차적으로 증가하며 반복시킨다
  
+```
+#!/bin/bash
+
+arr = (10 40 32)
+for anyInt in "${arr[@]}"
+do
+ echo {anyInt}
+done
+
+#출력
+10
+40
+32
+
+```
+주의: `arr[@]` 를 통해 arr배열의 모든 원소를 가져온다
+ 
+ ```
+#!/bin/bash
+
+arr = "A B C"
+for anyInt in $arr
+do
+ echo $anyInt
+done
+
+#출력
+A
+B
+C
+```
+
+ ```
+#!/bin/bash
+
+for ((i=0; i<3; i++))
+do
+ echo $i
+done
+
+#출력
+1
+2
+```
+주의: 이중 괄호를 통해 C언어 스타일의 반복문 문법 사용 가능
  
  
  <!--
