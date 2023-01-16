@@ -259,6 +259,7 @@ $ sudo apt-get install git
 #git설치
 ```
 
+<br><br>
 ---
 
 ## 3. 특수 매개변수
@@ -283,7 +284,7 @@ $ sudo apt-get install git
  #실행하는 파일인 test에서 이 값을 사용할 수 있다 
 ```
 
-<br><br>
+<br>
 
 ### 2. 특수 매개변수
 
@@ -310,6 +311,7 @@ $ echo $-
 #실행 결과: himBHs(플래그 정보 참고)
 ```
 
+<br><br>
 ---
 
 ## 4. 문법
@@ -322,7 +324,6 @@ $ echo $-
 3. ./파일명
 
 <br>
-
 
 ### 1. 첫 번째 행 작성 규칙 - Shebang
 ```console
@@ -492,6 +493,8 @@ mul=`expr $number1 \* $number2`
 | \|\| | - 논리식 OR |
 | !\| | - 논리식 NOT |
 
+ - 예제
+ 
 ```
 #!/usr/bin/bash
 
@@ -521,9 +524,6 @@ done
 ```
 - **무한 루프**의 경우, 조건부는 `while :` 로 표시
 - **continue**, **break**문 그대로 사용 가능
-
-<br>
-
 - 예제
 
 ```
@@ -551,9 +551,6 @@ done
 ```
 - **무한 반복**은 `for(( ; ; ))` 와 같이 사용 
 - **continue, break**문 사용 가능
-
-<br>
-
 - 예제 
 
 ```
