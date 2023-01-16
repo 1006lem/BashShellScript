@@ -1,4 +1,4 @@
-### 1. 시스템 명령어
+# 1. 시스템 명령어
 - 리눅스 시스템을 관리하기 위한 명령어
 
 | 명령어 | 특징 |
@@ -31,10 +31,10 @@
 | yes | <kbd>Ctrl</kbd> + <kbd>C</kbd>로 멈출 때까지 특정 문자열 반복 출력 |
 
 ---
-#### - crontab
+## - crontab
 - **특정 시간**에 **특정 작업**을 할 때 사용
 
-주요 옵션
+- 주요 옵션
 | 옵션 | 설명 |
 | :---: | --- |
 | -e | 등록된 명령어 수정 | 
@@ -49,7 +49,7 @@ $ crontab -e #편집 가능한 화면 로딩됨
 - 화면이 로딩되면 crontab을 편집할 수 있는 화면이 나온다
 <img width = "40%" src="https://user-images.githubusercontent.com/68532437/212014608-acad51a8-388f-4cd6-976f-65a7be3ed78a.png">
 
-- [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md)을 이용해 넣고 싶은 명령어를 작성한다
+- [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#3-편집-명령)을 이용해 넣고 싶은 명령어를 작성한다
 <br> (작성을 마치면 `:wq`를 통해 크롭탭을 갱신하고 편집 화면에서 나올 것)
 
 - **crontab 주기 결정 (crontab 명령 형식)**
