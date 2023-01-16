@@ -222,12 +222,12 @@ foo@bar:~$ sudo useradd -m kim
 
 
 
-- 요약 영역
-   -> 전체 프로세스가 OS에 대해 리소스를 어느정도 차지하는지 출력
-   -> 시스템 현재 시간, 유저, load average, task, CPU, memory 항목 출력
+- 요약 영역 <br>
+   -> 전체 프로세스가 OS에 대해 리소스를 어느정도 차지하는지 출력 <br>
+   -> 시스템 현재 시간, 유저, load average, task, CPU, memory 항목 출력 <br>
 
-- 나머지 영역(task are)
-  -> PID, USER, PR, NI, VIRT, RES, SHR, S, $CPU, $MEM, TIME, COMMAND로 구성
+- 나머지 영역(task are)<br>
+  -> PID, USER, PR, NI, VIRT, RES, SHR, S, $CPU, $MEM, TIME, COMMAND로 구성<br>
   
 
 
