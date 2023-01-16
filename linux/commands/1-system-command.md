@@ -35,7 +35,7 @@
 - **특정 시간**에 **특정 작업**을 할 때 사용
 
 - 주요 옵션
-- 
+
 | 옵션 | 설명 |
 | :---: | --- |
 | -e | 등록된 명령어 수정 | 
@@ -75,20 +75,20 @@ $ crontab -e #편집 가능한 화면 로딩됨
 - 예제
 ```console
 $ *****ls -al 
-# **매 분마다** ls -al 실행
+#매 분마다 ls -al 실행
 ```
 ```console
 $ 30 15 * * 1  /home/script/test.sh
-# **매주 월요일 15시 30분마다** /home/script/test.sh 실행
+#매주 월요일 15시 30분마다 /home/script/test.sh 실행
 
 $ 0,30 * * * * /home/script/test.sh
-# **0, 30분마다** /home/script/test.sh 실행
+#0, 30분마다 /home/script/test.sh 실행
 
 $ 0-30 * * * * /home/script/test.sh
-# **0~30분마다** /home/script/test.sh 실행
+#0~30분마다 /home/script/test.sh 실행
 
 */10 * * * * /home/script/test.sh
-# **매 10분마다** /home/script/test.sh 실행
+#매 10분마다 /home/script/test.sh 실행
 ```
 
 **crontab 내용 확인, 삭제, redirection**
