@@ -1,5 +1,6 @@
 # 1. 시스템 명령어
 - 리눅스 시스템을 관리하기 위한 명령어
+<!--https://marine1188.tistory.com/entry/Linux%EB%A6%AC%EB%88%85%EC%8A%A4-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%97%B0%EC%8A%B5-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EC%9B%B9%EC%97%90%EC%84%9C-%EC%84%A4%EC%B9%98-%EC%97%86%EC%9D%B4-%EB%B0%94%EB%A1%9C-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%9E%85%EB%A0%A5-%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%84%9C-%EB%A6%AC%EB%88%85%EC%8A%A4-%ED%95%98%EA%B8%B0-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%8B%A4%EC%8A%B5%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A7%88%EC%8A%A4%ED%84%B0-%EA%B3%B5%EB%B6%80-%ED%95%84%EC%88%98 -->
 
 | 명령어 | 특징 |
 | :----: | ------------------------------------------- |
@@ -53,6 +54,9 @@ $ crontab -e #편집 가능한 화면 로딩됨
 - [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#3-편집-명령)을 이용해 넣고 싶은 명령어를 작성한다
 <br> (작성을 마치면 `:wq`를 통해 크롭탭을 갱신하고 편집 화면에서 나올 것)
 
+<br>
+
+
 - **crontab 주기 결정 (crontab 명령 형식)**
 
 | * | * | * | * | * |
@@ -90,24 +94,24 @@ $ 0-30 * * * * /home/script/test.sh
 */10 * * * * /home/script/test.sh
 #매 10분마다 /home/script/test.sh 실행
 ```
+<br>
+
 
 **crontab 내용 확인, 삭제, redirection**
 - 로그를 남기고 싶다면 (명령어) >> (파일명) 2>&1
 - 로그를 남기고 싶지 않다면 파일명을 `/dev/null` 로 입력
 - `2>&1`은 
+- 
 ```console
 $ crontab -r  #크론탭에 설정된 내용 출력
-$ crintab -r # 크론탭으로 생성된 내용 삭제
-```
-
-```console
-$
+$ criontab -r # 크론탭으로 생성된 내용 삭제
 ```
 
 
+<br>
+---
 
-
-#### - groupadd
+## - groupadd
 <!-- uname소개<br>-->
 ```console
 foo@bar:~$ uname
