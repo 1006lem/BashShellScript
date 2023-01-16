@@ -1,10 +1,44 @@
 
 <!-- https://inpa.tistory.com/entry/LINUX-%EC%89%98-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%95%B5%EC%8B%AC-%EB%AC%B8%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC -->
-# Shell Script
-## Shell Script란?
+# 4. Bash Shell Script
+
+---
+## contents
+- [0. Shell Script란?](#0-shell-script란)
+- [1. 특수 문자](#1-특수-문자)
+- [2. 환경 설정]
+  - [1. 환경 변수]
+    - [bash 쉘 설정 파일](#--bash-쉘-설정-파일)
+    - [기본 환경변수/위치 매개변수 설정](#기본-환경변수위치-매개변수-설정)
+    - [주요 환경 변수](#주요-환경-변수)
+    - [프롬프트 스트링(Prompt String)](#프롬프트-스트링prompt-string)
+  - [2. 계정 변경](#2-계정-변경)
+ - [3. 특수 매개변수]
+   - [1. 위치 매개변수]
+   - [2. 특수 매개변수]
+   
+ - [4. 문법] 
+   - [0. 스크립트 실행 방식]
+   - [1. 첫 번째 행 작성 규칙 - Shebang]
+   - [2. 쉘 변수 선언]
+   - [3. 산술 연산]
+   - [4. 주석]
+   - [5. 조건문]
+   - [6. 반복문]
+      - [While문](#--While문)
+      - [for문](#--for문)
+   
+---
+
+## 0. Shell Script란?
 - Shell이나 command line 인터프리터에서 구동되도록 작성된 스크립트
 - 인터프리터 방식: 
 - hello.sh와 같이 `*.sh` 확장자를 갖는 파일이다
+
+<br><br>
+---
+
+
 
 ## 1. 특수 문자
 <!--https://jdm.kr/blog/4-->
@@ -64,7 +98,7 @@ $ ./test.sh >> /dev/null 2>&1
 
 - **/dev/null** 이해: <br>
   - 화면에 표시하지 않겠다는 의미(이곳으로 전송된 데이터는 버려진다) <br>
-<br>
+<br><br>
 
 ---
  
@@ -78,7 +112,7 @@ $ ./test.sh >> /dev/null 2>&1
  - 추가로, **set** 을 통해 **위치 매개변수** 설정 가능 <br>
  - 추가로, set은[vi 편집기의 ex모드에서](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#9-추가-ex-모드-명령어)에서 사용되기도 했다.
 
-<br><br>
+<br>
  
 #### - bash 쉘 설정 파일
  -**/etc/bash.bashrc** 파일은 사용자가 로컬 터미널 세션을 열 때마다 실행하는 파일
@@ -90,7 +124,7 @@ $ ./test.sh >> /dev/null 2>&1
  | /etc/barhrc | - 사용자 로그인 시 마지막으로 호출된다 <br> |
  
  
- <br><br>
+ <br>
  
  #### - 기본 환경변수/위치 매개변수 설정
  
@@ -121,7 +155,7 @@ $ export JAVA_HOME=/usr/hava/jdk1.6.0
 #파일의 맨 마지막 라인에 환경 변수 등록
 ```
  
- <br><br>
+ <br>
  
  #### - 주요 환경 변수 (**export** 명령어를 통해 전체 확인 가능)
  
@@ -148,7 +182,7 @@ $ echo $HOME
 #home디렉토리의 경로 표시
 ```
 
-<br><br>
+<br>
  
  
 #### - 프롬프트 스트링(Prompt String)
@@ -204,7 +238,7 @@ $ PS1="\[\033[0;34m\]\u-\d@\w$"
 ```
 
 
-<br>
+<br><br>
  
 ---
  
