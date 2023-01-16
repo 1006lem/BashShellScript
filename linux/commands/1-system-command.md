@@ -44,14 +44,16 @@
 | -r | 등록된 크롭탭 삭제 | 
 | -u | 크롭탭을 등록할 사용자 지정 | 
 
--e 옵션으로 편집 화면 열기
+<br>
+
+1. -e 옵션으로 편집 화면 열기
 ```console
 $ crontab -e #편집 가능한 화면 로딩됨 
 ```
 - 화면이 로딩되면 crontab을 편집할 수 있는 화면이 나온다
 <img width = "40%" src="https://user-images.githubusercontent.com/68532437/212014608-acad51a8-388f-4cd6-976f-65a7be3ed78a.png">
 
-- [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#3-편집-명령)을 이용해 넣고 싶은 명령어를 작성한다
+2. [vi편집 명령](https://github.com/1006lem/BashShellScript/blob/main/linux/vim/README.md/#3-편집-명령)을 이용해 넣고 싶은 명령어를 작성한다
 <br> (작성을 마치면 `:wq`를 통해 크롭탭을 갱신하고 편집 화면에서 나올 것)
 
 <br>
@@ -76,7 +78,6 @@ $ crontab -e #편집 가능한 화면 로딩됨
 - 주기 입력 시 * 뿐 아니라 -, /를 입력하기도 한다
 - `-`는 범위를 나타내고(ex: 0분~30분동안 실행), `/`는 간격을 나타낸다 (ex: 매 10분마다 실행)
 
-- 예제
 ```console
 $ *****ls -al 
 #매 분마다 ls -al 실행
@@ -100,15 +101,17 @@ $ 0-30 * * * * /home/script/test.sh
 **crontab 내용 확인, 삭제, redirection**
 - 로그를 남기고 싶다면 (명령어) >> (파일명) 2>&1
 - 로그를 남기고 싶지 않다면 파일명을 `/dev/null` 로 입력
-- `2>&1`은 
-- 
+- `2>&1`은 stderr를 stdout으로 리다이렉션한다
+ (2, 1은 file descriptor를 나타냄 -> 표준 에러를 log에 기록)
+
 ```console
-$ crontab -r  #크론탭에 설정된 내용 출력
+$ crontab -l  #크론탭에 설정된 내용 출력
 $ criontab -r # 크론탭으로 생성된 내용 삭제
 ```
 
 
 <br>
+
 ---
 
 ## - groupadd
