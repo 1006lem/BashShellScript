@@ -227,7 +227,7 @@ foo@bar:~$ sudo useradd -m kim
    -> 시스템 현재 시간, 유저, load average, task, CPU, memory 항목 출력 <br>
 
 - 나머지 영역(task are)<br>
-  -> PID, USER, PR, NI, VIRT, RES, SHR, S, $CPU, $MEM, TIME, COMMAND로 구성<br>
+   -> PID, USER, PR, NI, VIRT, RES, SHR, S, $CPU, $MEM, TIME, COMMAND로 구성<br>
   
 
 
