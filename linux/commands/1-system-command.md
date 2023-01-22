@@ -20,7 +20,7 @@
 | jobs |  |
 | journalctl |  |
 | logrotate |  |
-| man |  |
+| man | 명령어 매뉴얼 확인 |
 | nohup |  |
 | ntp |  |
 | openssl |  |
@@ -377,6 +377,18 @@ $ execlp(file, arg1, arg2, NULL);
 
 ---
 
+#### - wait
+
+- 백그라운드 프로세스 실행이 끝날 때까지 일시중지 
+- **자식 프로세스가 종료**할 때까지 기다릴 때 주로 사용
+- `wait (pid)` 를 통해 특정 PID의 프로세스 대기
+
+
+
+<br>
+
+---
+
 
 #### - fork
 
@@ -458,69 +470,223 @@ $ watch =d -n 1 'ps -ef | grep httpd |
 
 | 옵션 | 설명 |
 | :---: | --- |
-| -a| 모든 log 출력 |
+| -a | 모든 log 출력 |
 | -b | 마지막 부팅 후의 log 출력 |
 | -f | 가장 최근 log 표시, 추가되는 log는 계속 출력 |
 | -k | 커널 메시지만 출력 |
+| -r | 최신 항목부터 출력 |
 | json | json구조로 형식 |
+| -o | - log 출력 형식 지정 <br> - shift: 한 행에 하나의 log 출력 <br> - json: 한 줄에 하나씩 JSON으로 형식화 <br> - cat: 시간은 표현하지 않는 등 간략하게 표시 <br> - _UID=(번호): 특정 UDI의 프로세스에 대한 log 출력 |
 
 ```console
-$ journalctl -p crit
-foo
+
+$ joutnatctl -r -b
+#최신의 log부터 역순으로 출력, 마지막 부팅 이후 log 출력
+
+$ journalctl -p err
+#에러 로그 확인
 ```
+
+<br>
+
+---
+
 
 #### - logrotate
+
+- 쌓이는 log 관리
+- logrotate.conf 로 logrotate 설정 가능
+
+- 주요 옵션
+
+| 옵션 | 설명 |
+| :---: | --- |
+| daily | 매일 rotate |
+| rotate (개수) | 개수만큼 보관 |
+| maxage (숫자) | 숫자 이상의 백업 파일 삭제 |
+| olddir | 정리된 로그 저장 위치 |
+| create (권한)(유저)(그룹) | log 파일 생성 |
+| compressoptions (옵션) | 압축 옵션 설정 |
+| compressext (압축 형태) | 압축 형태(확장자) 지정 |
+
+
 ```console
-foo@bar:~$ uname
-foo
+$ vi logrotate.conf #파일 편집
 ```
 
-#### - man
-```console
-foo@bar:~$ uname
-foo
+```
+#logrotate.conf
+rotate 1000 #log 파일 수를 1000개로 유지(넘으면 가장 오래된 것 삭제)
+daily #매일 rotate
+create 664 # 644 권한으로 log 파일 생성
+maxage 7 #7일이 지나면 삭제
+```
+
+
+<br>
+
+---
+
+
 ```
 #### - nohup
+
+- no hang up
+- 세션을 종료해도(로그아웃) 실행된 프로그램 종료하지 않을 때 사용
+- 실행할 프로그램은 반드시 755 권한을 가져야 한다
+- &(백 그라운드): 백그라운드로 단순히 사용자 눈에 보이지 않도록 실행하는 것이기 때문에 세션이 종료되면 프로그램도 종료된다
+- 백그라운드 실행과 달리, nohup은 세션이 종료되어도 프로그램을 종료하지 않는다.
+
+
 ```console
-foo@bar:~$ uname
-foo
+$ nohup ./hello.sh 2 > errlog.err &
+#nohup, 백그라운드로 명령을 실행하고, 만들어진 에러는 errlog.err 로 리다이렉
+
+$ kill -9 (PID)
+#nohup으로 실행한 프로세스에 대해 프로세스 종료
 ```
+
+<br>
+
+---
 
 #### - ntp
+
+- network time protocol
+- 네트워크 디바이스의 시간 동기화
+- `/etc/ntp.conf` 로 서버 설정
+- `systemctl restart ntp.service` 명령어로 설정 후 재시
+
 ```console
-foo@bar:~$ uname
-foo
+$ vi /etc/ntp.conf
+```
+```
+#/etc/ntp.conf
+#server (시간 동기화 서버 ip) iburst (옵션) 
+
+server 0.asia.pool.ntp.org
 ```
 
+<br>
+
+---
+
 #### - openssl
+
+- openssl은 암호 라이브러리로, 개인키 생성, 자체 서명 증서 생 등의 기능 존
+
 ```console
-foo@bar:~$ uname
-foo
+# 개인키 생성
+$ openssl genrsa -des3 -out (키이름).key 2048
+
+# 자체 서명 인증서 생성
+$ openssl req -new -key 키이름.key -x509 -out 인증서이름.crt
+
+# 인증서 확인
+$ openssl x509 -noout -text -in 인증서파일.crt
+
 ```
+
+<br>
+
+---
 
 
 #### - pgrep
+
+- ps명령어와 grep 명령어 동시 실행과 같은 결과
+
+- 주요 옵션
+
+| 옵션 | 설명 |
+| :---: | --- |
+| -f | 이름에 맞는 프로세스 반환 |
+| -c | 조건에 맞는 프로세스 수 출력 |
+| -G | GID와 일치하는 프로세스 출력 |
+| -U | UID와 일치하는 프로세스 출력 |
+| -v | 조건에 맞지 않는 프로세스 출력 |
+
 ```console
-foo@bar:~$ uname
-foo
+$ pgrep -f vi | xargs kill
+#vi 프로세스 kill (xargs는 앞 명령어의 결과를 인자로 나열하여 command실행)
 ```
+
+<br>
+
+---
+
 
 #### - sar
+
+- System Activity Report
+- CPU, Memory 등 시스템 운영 정보 확인
+- `sysstat` 툴을 설치해야 사용 가능
+
+- 주요 옵션
+
+| 옵션 | 설명 |
+| :---: | --- |
+| -A | 모든 정보 출력 |
+| -u | CPU 사용률 출력 |
+| -r | 메모리 사용률 출력 |
+| -n | 네트워크 사용량 정보 출력 |
+| -b | 버퍼 작업 출력 |
+| -o (파일명) | 파일에 결과 저장 |
+| -d | 디스크 작업 통계력출력 |
+
 ```console
-foo@bar:~$ uname
-foo
+$ sar -r 2 5 sarfile
+# memory 사용량을 2초마다 5회 출력, 그 결과를 sarfile에 저장
 ```
 
+<br>
+
+---
+
+
 #### - systemctl
+
+- systemd(system daemon) 관리 명령어
+- /usr/lib/systemd/system 의 .service파일을 제어
+- (vs `service`) CentOS 6 이전은 service 구문으로 제어, 그 이후는 systemctl 구문으로 제어
+
 ```console
-foo@bar:~$ uname
-foo
+#서비스 상태 확인
+$systemctl status (서비스이름).service 
+
+#서비스 시작
+$systemctl start (서비스이름).service 
+
+#환경변수 확인
+$systemctl --user show-environment 
 ```
+
+<br>
+
+---
+
+
 #### - ulimit
-```console
-foo@bar:~$ uname
-foo
-```
+
+- 프로세스 자원 한도 설정
+- /etc/security/limits.conf 설정 파일에서 설정 가능
+- **soft** 설정은 기본으로 적용되는 설정, **hard** 설정은 최대로 늘릴 수 있는 설정
+
+- 주요 옵션
+
+| 옵션 | 설명 |
+| :---: | --- |
+| -a | 모든 제한 사항 출력 |
+| -S | soft 한도 |
+| -H | hard 한도 |
+| -s | 최대 stack 크기 |
+| -p | pipe 크기 |
+
+
+<br>
+
+---
+
 
 #### - uname
 ```console
@@ -528,12 +694,14 @@ foo@bar:~$ uname
 foo
 ```
 
-#### - wait
-```console
-foo@bar:~$ uname
-foo
-```
+<br>
 
+---
+
+
+<br>
+
+---
 
 #### - yes
 ```console
