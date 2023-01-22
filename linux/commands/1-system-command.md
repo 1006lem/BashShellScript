@@ -688,26 +688,12 @@ $systemctl --user show-environment
 ---
 
 
-#### - uname
-```console
-foo@bar:~$ uname
-foo
-```
-
-<br>
-
----
-
-
-<br>
-
----
-
 #### - yes
-```console
-foo@bar:~$ uname
-foo
-```
+
+- 문자열을 `ctrl + c` 로 멈출 때까지 계속해서 출력
+- 시스템 성능테스트에 사용
+
+
 
 
 
